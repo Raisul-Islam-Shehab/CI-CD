@@ -16,5 +16,10 @@ pipeline {
                 echo 'deploying...'
             }
         }
+        stage('Example') {
+            stages {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
+        }
     }
 }
