@@ -17,6 +17,7 @@ pipeline {
         stage('Deploy') {
             environment {
                 name = 'Siam'
+                job = 'student'
             }
             steps {
                 echo 'deploying...'
