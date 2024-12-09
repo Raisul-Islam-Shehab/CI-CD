@@ -34,5 +34,10 @@ pipeline {
                 sh 'printenv'
             }
         }
+        stage('New_Branch') {
+            steps {
+                echo 'I\'m in a new branch'
+            }
+        }
     }
 }
