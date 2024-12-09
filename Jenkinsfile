@@ -34,5 +34,14 @@ pipeline {
                 sh 'printenv'
             }
         }
+        stage('Dockerfile') {
+            agent {
+                dockerfile true
+            }
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
+            }
+        }
     }
 }
