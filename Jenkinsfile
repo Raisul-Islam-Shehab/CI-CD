@@ -15,8 +15,12 @@ pipeline {
             }
         }
         stage('Deploy') {
-           steps {
+            environment {
+                name = 'Siam'
+            }
+            steps {
                 echo 'deploying...'
+                sh 'printenv'
             }
         }
         stage('Example') {
