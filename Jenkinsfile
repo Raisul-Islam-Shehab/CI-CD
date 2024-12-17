@@ -10,7 +10,7 @@ pipeline {
             steps {
                 
                 // Install dependencies within the virtual environment
-                sh 'pip install --user -r requirements.txt'
+                sh 'sudo -H pip install -r requirements.txt'
 
                 // Run the Python script inside the virtual environment
                 sh 'python src/my_script.py'
