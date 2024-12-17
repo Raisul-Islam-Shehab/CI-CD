@@ -12,7 +12,11 @@ pipeline {
 
                 sh 'pip --version'
 
-                sh 'whoami'
+                sh 'echo $USER'
+                
+                sh 'python -m venv venv'
+                
+                sh '. venv/bin/activate'
                 
                 // Install dependencies within the virtual environment
                 sh 'pip install -r requirements.txt'
