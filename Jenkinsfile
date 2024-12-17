@@ -8,9 +8,14 @@ pipeline {
                 }
             }
             steps {
+                sh 'python --version'
+
+                sh 'pip --version'
+
+                sh 'echo $whoami'
                 
                 // Install dependencies within the virtual environment
-                sh 'sudo -H pip install -r requirements.txt'
+                sh 'pip install -r requirements.txt'
 
                 // Run the Python script inside the virtual environment
                 sh 'python src/my_script.py'
