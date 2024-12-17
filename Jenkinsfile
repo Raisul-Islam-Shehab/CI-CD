@@ -8,14 +8,9 @@ pipeline {
                 }
             }
             steps {
-                // Create a virtual environment
-                sh 'python -m venv venv'
-
-                // Activate the virtual environment
-                sh '. venv/bin/activate'
-
+                
                 // Install dependencies within the virtual environment
-                sh 'pip install -r requirements.txt'
+                sh 'pip install --user -r requirements.txt'
 
                 // Run the Python script inside the virtual environment
                 sh 'python src/my_script.py'
