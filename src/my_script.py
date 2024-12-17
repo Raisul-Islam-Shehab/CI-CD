@@ -3,14 +3,14 @@ import re
 import pprint
 import os
 
-token = os.getenv("GITHUB_TOKEN")
+# token = os.getenv("GITHUB_TOKEN")
 
 repo_url = "https://api.github.com/repos/Raisul-Islam-Shehab/LearnPython"
 
 github_headers = {
     "Accept": "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
-    "Authorization": f"Bearer {token}",
+    # "Authorization": f"Bearer {token}",
 }
 
 
