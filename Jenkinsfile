@@ -12,7 +12,7 @@ pipeline {
 
                 sh 'pip --version'
 
-                sh 'echo $whoami'
+                sh 'whoami'
                 
                 // Install dependencies within the virtual environment
                 sh 'pip install -r requirements.txt'
