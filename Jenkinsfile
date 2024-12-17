@@ -8,8 +8,16 @@ pipeline {
                 }
             }
             steps {
-                sh 'python --version'
-                sh 'pip install --no-cache-dir -r requirements.txt'
+                // Create a virtual environment
+                sh 'python -m venv venv'
+
+                // Activate the virtual environment
+                sh '. venv/bin/activate'
+
+                // Install dependencies within the virtual environment
+                sh 'pip install -r requirements.txt'
+
+                // Run the Python script inside the virtual environment
                 sh 'python src/my_script.py'
             }
         }
