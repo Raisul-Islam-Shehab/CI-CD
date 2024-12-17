@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python --version'
+                sh 'python src/my_script.py'
             }
         }
     }
