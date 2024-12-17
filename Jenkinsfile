@@ -1,10 +1,14 @@
 pipeline {
     agent none
     stages {
-        stage('Check') {
-            
+        stage('Run_Python_Script') {
+            agent {
+                docker {
+                    image 'python:3.13-alpine3.21'
+                }
+            }
             steps {
-                sh 'python3 --version'
+                sh 'python --version'
             }
         }
     }
