@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'python:latest'
-                    args '-u python'
+                    args '-u root'
                 }
             }
             steps {
