@@ -45,7 +45,6 @@ pipeline {
 
                 sh 'pip --version'
 
-                sh 'ls -al'
 
                 sh 'id'
 
@@ -56,7 +55,7 @@ pipeline {
                 sh '. venv/bin/activate && \
                     which python && \
                     which pip && \
-                    pip install --no-cache-dir -r requirements.txt && \
+                    pip install -r requirements.txt && \
                     echo $PATH && \
                     black src && \
                     flake8 src && \
