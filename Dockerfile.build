@@ -11,6 +11,3 @@ RUN usermod -aG pythonuser pythonuser
 
 # Switch to the new user
 USER pythonuser
-
-# Set the working directory for the new user
-WORKDIR /home/pythonuser
