@@ -25,7 +25,7 @@ pipeline {
                 // Install dependencies within the virtual environment
                 sh 'pip install --no-cache-dir -r requirements.txt'
 
-                echo $PATH
+                sh 'echo $PATH'
 
                 // Run the Python script inside the virtual environment
                 sh 'python src/my_script.py'
