@@ -33,8 +33,11 @@ pipeline {
         // }
         stage('TEST') {
             agent {
-                dockerfile {
-                    filename 'Dockerfile.build'
+                // dockerfile {
+                //     filename 'Dockerfile.build'
+                // }
+                docker {
+                    image 'python:latest'
                 }
             }
             steps {
