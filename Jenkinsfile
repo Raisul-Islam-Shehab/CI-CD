@@ -57,7 +57,7 @@ pipeline {
                     echo $PATH && \
                     black src && \
                     flake8 src && \
-                    pytest --cov=src src/test_script.py'
+                    pytest src/test_script.py'
             }
         }
     }
