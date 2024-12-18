@@ -8,19 +8,19 @@ pipeline {
         //         }
         //     }
         //     steps {
-        //         // sh 'python --version'
+        //         sh 'python --version'
 
-        //         // sh 'pip --version'
+        //         sh 'pip --version'
 
-        //         // sh 'ls -al'
+        //         sh 'ls -al'
 
-        //         // sh 'id'
+        //         sh 'id'
 
-        //         // sh 'python -m venv venv'
+        //         sh 'python -m venv venv'
 
-        //         // sh 'ls -al'
+        //         sh 'ls -al'
 
-        //         // sh '. venv/bin/activate'
+        //         sh '. venv/bin/activate'
 
         //         // Install dependencies within the virtual environment
         //         sh 'pip install --no-cache-dir -r requirements.txt'
@@ -38,37 +38,24 @@ pipeline {
                 }
             }
             steps {
-                sh """
-                python --version
+                sh 'python --version'
 
-                pip --version
+                sh 'pip --version'
 
-                ls -al
+                sh 'ls -al'
 
-                id
+                sh 'id'
 
-                python -m venv venv
+                sh 'python -m venv venv'
 
-                s -al
+                sh 'ls -al'
 
-                . venv/bin/activate
-
-                echo $VIRTUAL_ENV
-
-                which python
-
-                which pip
-
-                pip install --upgrade pip
-
-                // Install dependencies within the virtual environment
-                pip install --no-cache-dir -r requirements.txt
-
-                flake8 src
-
-                // Run the Python script inside the virtual environment
-                pytest --cov=src src/test_script.py
-                """
+                sh '. venv/bin/activate && \
+                    which python && \
+                    which pip && \
+                    pip install --no-cache-dir -r requirements.txt && \
+                    echo $PATH && \
+                    python src/my_script.py'
             }
         }
     }
