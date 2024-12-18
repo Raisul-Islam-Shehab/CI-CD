@@ -16,6 +16,10 @@ pipeline {
                 sh 'echo $USER'
 
                 sh 'ls -al'
+
+                sh 'ls -l /.local'
+
+                sh 'ls -l /.cache/pip'
                 
                 // sh 'python -m venv venv'
                 
