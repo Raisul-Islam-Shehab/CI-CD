@@ -1,5 +1,7 @@
 FROM python:3.13-alpine3.21
 
+RUN apk add --no-cache shadow
+
 # Add a group with GID 1000
 RUN groupadd -g 1000 pythonuser
 
