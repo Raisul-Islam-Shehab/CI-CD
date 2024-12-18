@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'python:latest'
-                    args '-u root'
+                    // args '-u root'
                 }
             }
             steps {
@@ -16,6 +16,8 @@ pipeline {
                 sh 'ls -al'
 
                 sh 'id'
+
+                sh 'sudo ls -al'
 
                 // Install dependencies within the virtual environment
                 sh 'pip install -r requirements.txt'
