@@ -17,7 +17,7 @@ pipeline {
 
                 sh 'ls -al'
 
-                sh 'ls -l /.local'
+                // sh 'ls -l /.local'
 
                 sh 'ls -l /.cache/pip'
                 
