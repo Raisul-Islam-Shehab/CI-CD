@@ -15,15 +15,11 @@ pipeline {
 
                 sh 'echo $USER'
 
+                sh 'python -m venv myvenv'
+
                 sh 'ls -al'
-
-                // sh 'ls -l /.local'
-
-                sh 'ls -l /.cache/pip'
                 
-                // sh 'python -m venv venv'
-                
-                // sh '. venv/bin/activate'
+                sh 'source myvenv/bin/activate'
 
                 // Install dependencies within the virtual environment
                 sh 'pip install -r requirements.txt'
