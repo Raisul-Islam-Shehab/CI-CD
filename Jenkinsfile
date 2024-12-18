@@ -55,7 +55,8 @@ pipeline {
                     which pip && \
                     pip install --no-cache-dir -r requirements.txt && \
                     echo $PATH && \
-                    python src/my_script.py'
+                    flake8 src && \
+                    pytest --cov=src src/test_script.py'
             }
         }
     }
