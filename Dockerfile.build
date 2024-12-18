@@ -1,1 +1,16 @@
 FROM python:latest
+
+# Add a group with GID 1000
+RUN groupadd -g 1000 pythonuser
+
+# Add a user with UID 1000, GID 1000, and a home directory
+RUN useradd -m -u 1000 -g 1000 -s /bin/bash pythonuser
+
+# Add the user to a group (GID 1000)
+RUN usermod -aG pythonuser pythonuser
+
+# Switch to the new user
+USER pythonuser
+
+# Set the working directory for the new user
+WORKDIR /home/pythonuser
