@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'python:latest'
-                    args '-u root'
+                    // args '-u root'
                 }
             }
             steps {
@@ -14,6 +14,8 @@ pipeline {
                 sh 'pip --version'
 
                 sh 'echo $USER'
+
+                sh 'ls -al'
                 
                 // sh 'python -m venv venv'
                 
