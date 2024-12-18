@@ -23,7 +23,7 @@ pipeline {
                 // sh '. venv/bin/activate'
 
                 // Install dependencies within the virtual environment
-                sh 'pip install --no-cache-dir -r requirements.txt'
+                // sh 'pip install --no-cache-dir -r requirements.txt'
 
                 // Run the Python script inside the virtual environment
                 sh 'python src/my_script.py'
