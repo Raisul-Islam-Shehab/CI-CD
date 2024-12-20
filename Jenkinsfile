@@ -60,4 +60,10 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+        echo 'Running post always'
+        }
+    }
 }
