@@ -1,0 +1,35 @@
+# Use the official Ubuntu 20.04 image as the base
+FROM ubuntu:20.04
+
+# Set environment variables to avoid interactive prompts during apt-get
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install essential tools and dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    wget \
+    gnupg \
+    build-essential \
+    git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js (18.x) and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g npm@latest
+
+# Install pnpm globally
+RUN npm install -g pnpm@^7
+
+# Set the working directory in the container
+WORKDIR /var/jenkins_home/workspace/google_chat
+
+# Copy project files into the container
+COPY . .
+
+# Install project dependencies using pnpm
+RUN pnpm install --frozen-lockfile
+
+# Define the default command
+CMD ["bash"]

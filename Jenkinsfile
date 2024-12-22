@@ -1,43 +1,18 @@
 pipeline {
-    agent any
-    environment {
-        name = 'Shehab'
-    }
+    agent none
     stages {
         stage('Build') {
+            agent {
+                    dockerfile {
+                        filename 'Dockerfile.linux'
+                    }
+                }
             steps {
-                echo 'building...'
+                sh 'rm -rf ./Jenkinsfile && \
+                npm run pack:linux && \
+                npm run build:deb && \
+                npm run build:deb-checksum'
+                }
             }
         }
-        stage('Test') {
-            steps {
-                echo 'testing...'
-            }
-        }
-        stage('Deploy') {
-            environment {
-                name = 'Siam'
-                job = 'student'
-            }
-            steps {
-                echo 'deploying...'
-                sh 'printenv'
-            }
-        }
-        stage('Example') {
-            steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-            }
-        }
-        stage('PrintName') {
-            steps {
-                sh 'printenv'
-            }
-        }
-        stage('New_Branch') {
-            steps {
-                echo 'I\'m in a new branch'
-            }
-        }
-    }
 }
