@@ -21,6 +21,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 # Install pnpm globally
 RUN npm install -g pnpm@^7
 
+COPY package.json .
+
 # Install project dependencies using pnpm
 RUN pnpm install --frozen-lockfile --no-cache
 
