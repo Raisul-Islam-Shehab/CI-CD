@@ -28,7 +28,7 @@ RUN npm install -g pnpm@^7
 COPY . .
 
 # Install project dependencies using pnpm
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --no-cache
 
 # Define the default command
 CMD ["bash"]
