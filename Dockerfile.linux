@@ -23,6 +23,8 @@ RUN npm install -g pnpm@^7
 
 COPY package.json .
 
+COPY pnpm-lock.yaml .
+
 # Install project dependencies using pnpm
 RUN pnpm install --frozen-lockfile --no-cache
 
