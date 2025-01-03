@@ -25,10 +25,8 @@ COPY package.json .
 
 COPY pnpm-lock.yaml .
 
-RUN mkdir /.cache
-
 # Install project dependencies using pnpm
-RUN pnpm install --frozen-lockfile --no-cache
+RUN pnpm install --frozen-lockfile 
 
 # Define the default command
 CMD ["bash"]
