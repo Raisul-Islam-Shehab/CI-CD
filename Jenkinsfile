@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        choice(name: 'CHOICE', choices: 'one\ntwo\nthree', description: 'Choose one')
+        choice(name: 'CHOICE', choices: ['one', 'two', 'three'], description: 'Choose one')
     }
     stages {
         stage('Build') {
