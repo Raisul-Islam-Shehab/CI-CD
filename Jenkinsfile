@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Example Deploy') {
             when {
-                branch 'syntax_branch'
+                changeRequest target: 'main'
             }
             steps {
                 echo 'Deploying'
