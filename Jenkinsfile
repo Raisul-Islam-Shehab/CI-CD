@@ -5,7 +5,7 @@ pipeline {
             agent {
                     dockerfile {
                         filename 'Dockerfile.linux'
-                        args '-w /'
+                        args '-u root'
                     }
             }
             steps {
