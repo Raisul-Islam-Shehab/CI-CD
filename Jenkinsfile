@@ -1,19 +1,16 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Build') {
-            agent {
-                    dockerfile {
-                        filename 'Dockerfile.linux'
-                        args '-u root'
-                    }
-            }
             steps {
-                sh 'rm -rf ./Jenkinsfile && \
-                npm run pack:linux && \
-                npm run build:deb && \
-                npm run build:deb-checksum'
+                sh '''
+                    docker --version
+                    git --version
+                    docker buildx version
+                    docker buildx build --platform linux/amd64,linux/arm64 -t raisul716/kubekit --push .
+                '''
             }
         }
     }
 }
+
