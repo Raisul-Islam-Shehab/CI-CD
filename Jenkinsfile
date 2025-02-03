@@ -41,6 +41,7 @@ pipeline {
             steps {
                 echo 'Hello triggers'
                 echo 'new commit'
+                echo 'new tag'
             }
         }
     }
