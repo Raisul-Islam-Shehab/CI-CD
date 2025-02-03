@@ -37,7 +37,9 @@ pipeline {
             }
         }
         stage('checking using commit') {
-            echo 'Hello triggers'
+            steps {
+                echo 'Hello triggers'
+            }
         }
     }
 }
