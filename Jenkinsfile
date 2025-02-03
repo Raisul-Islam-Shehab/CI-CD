@@ -28,5 +28,13 @@ pipeline {
                 echo 'Building a Tag'
             }
         }
+        stage('checking pollSCM') {
+            when {
+                buildingTag()
+            }
+            steps {
+                echo 'Checking if pollSCM works'
+            }
+        }
     }
 }
