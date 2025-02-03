@@ -40,6 +40,7 @@ pipeline {
         stage('checking using commit') {
             steps {
                 echo 'Hello triggers'
+                echo 'new commit'
             }
         }
     }
