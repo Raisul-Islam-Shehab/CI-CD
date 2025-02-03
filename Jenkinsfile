@@ -36,5 +36,8 @@ pipeline {
                 echo 'Checking if pollSCM works'
             }
         }
+        stage('checking using commit') {
+            echo 'Hello triggers'
+        }
     }
 }
