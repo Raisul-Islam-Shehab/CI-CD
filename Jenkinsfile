@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers {
+        pollSCM('*/5 * * * *')
+    }
     stages {
         stage('Example Build') {
             when {
@@ -15,6 +18,14 @@ pipeline {
             }
             steps {
                 echo 'Deploying'
+            }
+        }
+        stage('build tag') {
+            when {
+                buildingTag()
+            }
+            steps {
+                echo 'Building a Tag'
             }
         }
     }
