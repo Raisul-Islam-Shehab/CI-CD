@@ -10,6 +10,7 @@ pipeline {
             }
             steps {
                 echo 'Hello World'
+                echo 'Hi'
             }
         }
         stage('Example Deploy') {
