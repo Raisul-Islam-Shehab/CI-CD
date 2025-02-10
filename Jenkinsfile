@@ -42,6 +42,7 @@ pipeline {
             }
             steps {
                 echo 'Checking if pollSCM works'
+                echo 'new tag v7'
             }
         }
         stage('checking using commit') {
@@ -49,11 +50,12 @@ pipeline {
                 echo 'Hello triggers'
                 echo 'new commit'
                 echo 'new tag'
+                echo 'new v7'
             }
         }
         stage('checking tag') {
             when {
-                tag 'v*'
+                tag 'v7'
             }
             steps {
                 echo 'checking if tag is building'
