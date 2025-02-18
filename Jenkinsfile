@@ -19,7 +19,7 @@ pipeline {
                 buildingTag()
             }
             steps {
-                echo 'Checking BuildingTag 2'
+                echo 'Checking BuildingTag 3'
             }
         }
     }
