@@ -14,5 +14,13 @@ pipeline {
                 echo 'Deploying'
             }
         }
+        stage('Checking BuildTag') {
+            when {
+                buildingTag()
+            }
+            steps {
+                echo 'Checking BuildTag'
+            }
+        }
     }
 }
